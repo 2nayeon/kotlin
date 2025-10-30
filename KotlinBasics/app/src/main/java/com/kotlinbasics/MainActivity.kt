@@ -1,6 +1,7 @@
 package com.kotlinbasics
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -29,7 +30,20 @@ class MainActivity : ComponentActivity() {
         }
 //        week02Variables()
 //        week02Functions()
-        week03Classes()
+//        week03Classes()
+        week03Collections()
+    }
+}
+
+private fun week03Collections(){
+    Log.d("KotlinWeek03", "== Kotlin Collections ==")
+
+    val fruits = listOf("apple", "banana", "orange")
+//    fruits.add("kiwi")
+    Log.d("KotlinWeek03", "Fruits : $fruits")
+
+    for(fruit in fruits){
+        Log.d("KotlinWeek03", "Fruit : $fruit")
     }
 }
 
@@ -38,11 +52,9 @@ private fun week03Classes(){
     println("== Kotlin Classes ==")
 
     class Student{
-        // 가변 프로퍼티(속성)
         var name: String = ""
         var age: Int = 0
 
-        // 메서드(동작)
         fun introduce(){
             println("Hi, I'm $name and I'm $age years old")
         }
@@ -52,14 +64,13 @@ private fun week03Classes(){
     student.age = 22
     student.introduce()
 
-    class Person(val name: String, val age: Int)
+    data class Person(val name: String, val age: Int)
 
     val person1 = Person("Lee", 24)
     val person2 = Person("Lee", 24)
 
     println("Person1: $person1")
     println("Equal?: ${person1 == person2}")
-    println("Equal?: ${person1 === person2}")
 }
 
 
